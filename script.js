@@ -138,8 +138,12 @@ atmMenu();
 async function loadingTimer() {
   /*for (let i = 5; i > 0; i--)*/ {
     await sleep(1000);
-    alert(`Loading Your Menu Options.
+    try {
+      alert(`Loading Your Menu Options.
     Please press OK to see Menu. `);
+    } catch (err) {
+      message.innerHTML = "Input is " + err;
+    }
     // alert(i);
   }
 }
